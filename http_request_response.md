@@ -15,7 +15,7 @@ GET http://www.devbootcamp.com HTTP/1.1
 verb            URL            version
 ```
 * Requests have a header, to carry meta-data, and a body, to carry content data.
-* A GET requests have an empty body.
+* A GET request has an empty body.
 * The body of a POST request typically carries data from HTML forms submitted by the user, to be used by the server in some way.
 
 ### The Server sends a _Response_ back to the Client
