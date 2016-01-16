@@ -36,7 +36,45 @@ Status Code | Meaning
 * A successful **GET** request receives a status-200 response carrying a **rendered view**.
 * A successful **POST** request receives a status-300 response carrying a **redirect**.
 
+### Flow of the Response-Request Cycle
+```
++----------------+                                     +----------------+
+|                |               INTERNET              |                |
+|                |                                     |                |
+|                |   Request: GET http://www.dbc.com   |                |
+|                |---------------------------------->> |                |
+|                |                                     |                |
+|                |          Response: 200 - OK         |                |
+|                | <<==================================|                |
+|                |          HTML for home page,        |                |
+|                |         rendered as a string        |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |       Request: POST /users/new      |                |
+|                |==================================>> |                |
+|     CLIENT     |       Data from new user form       |     SERVER     |
+|                |                                     |                |
+|                |       Response: 300 - Redirect      |                |
+|                | <<----------------------------------|                |
+|                |             to /users/237           |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |                                     |                |
+|                |       Request: GET /users/237       |                |
+|                |---------------------------------->> |                |
+|                |                                     |                |
+|                |          Response: 200 - OK         |                |
+|                | <<==================================|                |
+|                |   HTML for user #237 profile page,  |                |
+|                |         rendered as a string        |                |
+|                |                                     |                |
++----------------+                                     +----------------+
+```
 
+___
 
 ## The Long Version
 _Note: Even this "long version" is a very brief overview of this topic; your instructors will go into much more depth with you in class, covering special cases and filling in anything that is omitted here._
@@ -80,43 +118,6 @@ usually due to a problem in the server-side software or database.
 ```
 * The **body** of the response contains data sent by the server to the client. Again, it is separated from the header by a blank line. The body of a **GET** request will typically contain an HTML file in the form of a string, which will be displayed by the client to the user. (In some cases, covered later in Phase 2, a response to a GET request will return a JSON object, which is a way of rendering a JavaScript object as a string, so it can be conveyed via HTTP).
 
-### Flow of the Response-Request Cycle
-```
-+----------------+                                     +----------------+
-|                |               INTERNET              |                |
-|                |                                     |                |
-|                |   Request: GET http://www.dbc.com   |                |
-|                |---------------------------------->> |                |
-|                |                                     |                |
-|                |          Response: 200 - OK         |                |
-|                | <<==================================|                |
-|                |          HTML for home page,        |                |
-|                |         rendered as a string        |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |       Request: POST /users/new      |                |
-|                |==================================>> |                |
-|     CLIENT     |       Data from new user form       |     SERVER     |
-|                |                                     |                |
-|                |       Response: 300 - Redirect      |                |
-|                | <<----------------------------------|                |
-|                |             to /users/237           |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |                                     |                |
-|                |       Request: GET /users/237       |                |
-|                |---------------------------------->> |                |
-|                |                                     |                |
-|                |          Response: 200 - OK         |                |
-|                | <<==================================|                |
-|                |   HTML for user #237 profile page,  |                |
-|                |         rendered as a string        |                |
-|                |                                     |                |
-+----------------+                                     +----------------+
-```
 
 ## Further Reading
 [HTTP (HyperText Transfer Protocol)](https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
