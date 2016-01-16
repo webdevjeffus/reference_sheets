@@ -7,3 +7,4 @@ These reference sheets provide quick access to basic syntax models, code snippet
 * [HTTP Request-Response Cycle](https://github.com/webdevjeffus/reference_sheets/blob/master/http_request_response.md)
 * [Object-Oriented Javascript](https://github.com/webdevjeffus/reference_sheets/blob/master/oojs.md)
 * [ReSTful Routes for Sinatra](https://github.com/webdevjeffus/reference_sheets/blob/master/restful_routes.md)
+* [Git Rebase Workflow](https://github.com/webdevjeffus/reference_sheets/blob/master/git_rebase.md)
