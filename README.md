@@ -14,6 +14,9 @@ These reference sheets provide quick access to basic syntax models, code snippet
 ## Resources from Other Sources
 These links connect to resource created by other people that support web development in general, and Sinatra- or Rails-based work in particular.
 
+### Rails Resources
+* [Dizzy Form Helper Cheatsheet](http://appletree.or.kr/quick_reference_cards/Ruby-Ruby_on_Rails/form-helpers.pdf)
+
 ##### Rails Resources from Steven Cassidy, DBC NY Instructor
 * [Moving to Rails from Sinatra](https://github.com/nyc-island-foxes-2016/phase-3-guide/blob/nyc/resources/moving-to-rails.md)
 * [Cool Stuff in Rails](https://github.com/nyc-island-foxes-2016/phase-3-guide/blob/nyc/resources/cool-stuff-in-rails.md)
