@@ -12,31 +12,39 @@ Database  Constraints (added during migrations)
 
 ### HTML form input types and attributes
 HTML form validations are easy to implement, and provide neatly-formatted, easily-understood messages when users make errors entering data into forms. They are easily circumvented through Chrome or Firefox Dev Tools, though, so don't count on them as security. (They keep your mom from entering a 2-letter password, but won't protect against real hackers.) There are many more input types and attributes in HTML5 than are listed here, but these are the ones I found useful in Phase 2 at DBC. Google "HTML input types" and "HTML input attributes" for code examples and complete instructions on their use.
+
+**_Word to the wise:_** If you implement HTML form validations early in your development process, they will interfere with your testing of ActiveRecord model validations and migration constraints. For example, if you put a minimum length of 6 characters on usernames in the HTML for your new user form, it will catch too-short usernames before they ever reach your model validation for username length, so that your model validations don't get properly tested. For this reason, either add your HTML form validations _after_ you've thoroughly tested your ActiveRecord validations, or deliberately disable them to allow your AR validations to be tested, then the HTML validations back on.
 ```
 INPUT TYPES__________________________________________________________
-text
-password
-email
-url
-number
-date
+  text
+  password
+  email
+  url
+  number
+  date
 
 INPUT ATTRIBUTES_____________________________________________________
-For any field:
-  required
-For strings:
-  maxlength
-  minlength
-For numbers:
-  max
-  min
+  For any field:
+    required
+  For strings:
+    maxlength
+    minlength
+  For numbers:
+    max
+    min
 
 Useful attributes that are not technically validations...............
-disabled
-placeholder
-size (width in characters)
-autofocus (places cursor in field)
-value (sets default value in field; useful in /edit forms)
+  disabled
+  placeholder
+  size (width in characters)
+  autofocus (places cursor in field)
+  value (sets default value in field; useful in /edit forms)
+
+INPUT FIELD EXAMPLE__________________________________________________
+
+  <input type='text' name='username' id='username_input' placeholder='Username'
+    minlength=4 maxlength=20 required />
+
 ```
 
 ### ActiveRecord Model Validations
@@ -46,14 +54,14 @@ presence: true,
 length: { in: 4..20 },
 uniqueness: true
 
-Cheesy, low-rent URL validation:
+# Cheesy, low-rent URL validation:
 validates :URL          presence: true,
                         format: /(http|https):\/\//
 ```
 
 
 #### Custom Model Validations
-_Note: You must *add an error message* to the errors array to make custom validations work. Custom validations **do not** return true/false. Note that the syntax is "validate", not "validates"._
+**_Note:_** You must **add an error message** to the errors array to make custom validations work. Custom validations **do not** return true/false. Also note that the syntax is _"validate"_, not _"validate**s**"_.
 
 ```ruby
 class Thing < ActiveRecord::Base
@@ -63,7 +71,7 @@ class Thing < ActiveRecord::Base
 
   def start_before_end
     unless self.start < self.end
-      self.errors << "It doesn't start until after it ends!"
+      self.errors << "It has to start before it ends!"
     end
   end
 end
@@ -78,17 +86,18 @@ t.string          :field_name, null: false
 # For usernames and other fields that need to be unique:
 t.string          :username, null: false, unique: true
 
-# For text strings with maximum lengths
-# (I haven't found a minimum limit yet...)
-t.string          :limit: 20
-
-# For money:
-t.field_name      :decimal, precision: 8, scale: 2
-scale:
+# For text strings with maximum lengths, such as usernames:
+t.string          limit: 20
+# (There is no way to set a minimum string length as a database constraint.)
 
 # For foreign keys:
-# (Consider any indexing any field that gets searched alot)
 t.integer         :field_name_id, null: false, index: true
+# (Consider indexing any field that gets searched more often than it gets updated.)
+
+# For money:
+t.decimal         :price, precision: 8, scale: 2
+# (This handles values from -999,999.99 to 999,999.99;
+# if you need to handle larger values, increase the value set for precision.)
 ```
 
 
