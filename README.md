@@ -9,6 +9,7 @@ These reference sheets provide quick access to basic syntax models, code snippet
 * [Object-Oriented Javascript](https://github.com/webdevjeffus/reference_sheets/blob/master/oojs.md)
 * [ReSTful Routes for Sinatra](https://github.com/webdevjeffus/reference_sheets/blob/master/restful_routes.md)
 * [Git Rebase Workflow](https://github.com/webdevjeffus/reference_sheets/blob/master/git_rebase.md)
+* [Drop-In CSS for Sinatra MVPs](https://github.com/webdevjeffus/css-for-sinatra)&mdash;This one is a full repo in the form of a tutorial.
 
 
 ## Resources from Other Sources
