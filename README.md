@@ -29,3 +29,6 @@ These links connect to resource created by other people that support web develop
 
 #### Interviewing
 * [The Technical Interview Cheat Sheet](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b) by GitHub user TSiege
+
+### Programming Resources from Bruno Zatta
+A [large list](https://gist.github.com/Brunation11/da7fbea0128e8b9242a7) covering Ruby, Rails, TDD, Heroku, Task Automation, MEAN Stack, and other topics.
