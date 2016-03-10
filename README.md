@@ -28,7 +28,7 @@ These links connect to resource created by other people that support web develop
 * [Driver Code to RSpec - Basic testing example](https://gist.github.com/abinoda/1a0778292dd0aa0cd380)
 * [RSpec Cheat Sheet](http://cheat.errtheblog.com/s/rspec)
 
-#### Interviewing
+### Interviewing
 * [The Technical Interview Cheat Sheet](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b) by GitHub user TSiege
 
 ### Programming Resources from Bruno Zatta
