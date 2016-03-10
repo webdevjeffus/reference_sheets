@@ -17,6 +17,7 @@ These links connect to resource created by other people that support web develop
 
 ### Rails Resources
 * [Dizzy Form Helper Cheatsheet](http://appletree.or.kr/quick_reference_cards/Ruby-Ruby_on_Rails/form-helpers.pdf)
+* [Rails Naming Conventions](https://gist.github.com/iangreenleaf/b206d09c587e8fc6399e)
 
 ##### Rails Resources from Steven Cassidy, DBC NY Instructor
 * [Moving to Rails from Sinatra](https://github.com/nyc-island-foxes-2016/phase-3-guide/blob/nyc/resources/moving-to-rails.md)
