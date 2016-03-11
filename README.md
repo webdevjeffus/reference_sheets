@@ -23,6 +23,7 @@ These links connect to resource created by other people that support web develop
 * [Moving to Rails from Sinatra](https://github.com/nyc-island-foxes-2016/phase-3-guide/blob/nyc/resources/moving-to-rails.md)
 * [Cool Stuff in Rails](https://github.com/nyc-island-foxes-2016/phase-3-guide/blob/nyc/resources/cool-stuff-in-rails.md)
 * [ActiveRecord Extensions](https://gist.github.com/stevecass/2afff7285a1099e2243f)
+* [Creating a New Rails App](https://gist.github.com/stevecass/5eb42895229c980419d4)
 
 ##### TDD - RSpec, etc.
 * [Driver Code to RSpec - Basic testing example](https://gist.github.com/abinoda/1a0778292dd0aa0cd380)
